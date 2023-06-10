@@ -19,4 +19,14 @@ public class ProductsMapper {
           return product;
         };
     }
+
+    public Function<Products, ProductsDTO> mapperToDTO(){
+        return entity -> new ProductsDTO(
+                entity.getId(),
+                entity.getCategory(),
+                entity.getPrice(),
+                entity.getSize(),
+                entity.getStock()
+        );
+    }
 }
